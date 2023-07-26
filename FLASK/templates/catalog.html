@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ super() }}
+{% endblock %}
+
+
+{% block content %}
+{{ super() }}
+
+<div class="catalog_wrapper">
+    {% for product in products %}
+    <div class="catalog">
+        <p>{{ product.title }}</p>
+        <img src="{{ url_for('show_product', product_id=product.photo) }}" alt="{{ url_for('show_product', product_id=product.title) }}">
+        <p>{{ product.price }}</p>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="catalog_wrapper">
+    <div class="catalog">
+        <p>Eurol Super 2T Formax</p>
+        <img src="https://i0.wp.com/www.eurol-shop.ru/wp-content/uploads/2021/04/E128433-1L-1.png?fit=512%2C768&ssl=1" alt="Eurol Super 2T Formax">
+        <p>1550</p>
+</div>
+    <div class="catalog">
+        <p>Eurol SX Sport 2-Stroke</p>
+        <img src="https://i0.wp.com/www.eurol-shop.ru/wp-content/uploads/2021/04/E128400-1L-1.png?resize=512%2C768&ssl=1" alt="Eurol SX Sport 2-Stroke">
+        <p>765</p>
+    </div>
+    <div class="catalog">
+        <p>Eurol TTX ProScoot</p>
+        <img src="https://i0.wp.com/www.eurol-shop.ru/wp-content/uploads/2021/04/E128428-1L-1.png?fit=512%2C768&ssl=1" alt="Eurol TTX ProScoot">
+        <p>816</p>
+    </div>
+    <div class="catalog">
+        <p>Eurol TTX Supreme</p>
+        <img src="https://i0.wp.com/www.eurol-shop.ru/wp-content/uploads/2021/04/E128425-1L-1.png?fit=512%2C768&ssl=1" alt="Eurol TTX Supreme">
+        <p>765</p>
+    </div>
+</div>
+
+{% endblock %}
